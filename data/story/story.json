@@ -1,0 +1,146 @@
+{
+  "quests": {
+    "the_missing_artifact": {
+      "name": "The Missing Artifact",
+      "description": "A valuable artifact has been stolen from the village elder. Find it and return it for a reward.",
+      "status": "available",
+      "starting_dialogue_id": "elder_quest_start",
+      "completion_dialogue_id": "elder_quest_complete",
+      "objectives": [
+        {
+          "type": "find_item",
+          "item_id": "ancient_artifact",
+          "description": "Find the Ancient Artifact.",
+          "is_completed": false,
+          "success_event": "artifact_found_event"
+        },
+        {
+          "type": "return_to_npc",
+          "npc_id": "village_elder",
+          "description": "Return the artifact to the Village Elder.",
+          "is_completed": false,
+          "prerequisite_objective_id": "find_ancient_artifact"
+        }
+      ],
+      "rewards": {
+        "xp": 100,
+        "items": ["golden_coins_50", "enchanted_ring_of_protection"],
+        "unlock_quest": "the_goblin_threat"
+      }
+    },
+    "the_goblin_threat": {
+      "name": "The Goblin Threat",
+      "description": "Goblins are becoming bolder. Clear the Goblin Cave of their leader.",
+      "status": "locked",
+      "starting_dialogue_id": "guard_goblin_threat",
+      "completion_dialogue_id": "guard_goblin_complete",
+      "objectives": [
+        {
+          "type": "defeat_enemy",
+          "enemy_id": "goblin_king",
+          "count": 1,
+          "description": "Defeat the Goblin King in the Goblin Leader's Chamber.",
+          "is_completed": false
+        }
+      ],
+      "rewards": {
+        "xp": 200,
+        "items": ["orcish_axe"],
+        "unlock_access": "mountain_pass"
+      }
+    }
+  },
+
+  "dialogue": {
+    "elder_quest_start": {
+      "speaker": "Village Elder",
+      "lines": [
+        "Oh, traveler, I beg of you!",
+        "A terrible thief has stolen our village's most sacred artifact!",
+        "Please, you must help us! Find the ancient_artifact and bring it back."
+      ],
+      "options": [
+        {"text": "Accept Quest", "action": "accept_quest", "quest_id": "the_missing_artifact", "next_dialogue_id": "elder_thankful"},
+        {"text": "Decline Quest", "action": "decline_quest", "next_dialogue_id": "elder_disappointed"}
+      ]
+    },
+    "elder_thankful": {
+      "speaker": "Village Elder",
+      "lines": ["Thank you, brave soul! The spirits of our ancestors bless your journey.", "Be swift, the artifact must be recovered!"],
+      "next_dialogue_id": null
+    },
+    "elder_disappointed": {
+      "speaker": "Village Elder",
+      "lines": ["Alas, I understand. Perhaps another will rise to the challenge."],
+      "next_dialogue_id": null
+    },
+    "elder_quest_complete": {
+      "speaker": "Village Elder",
+      "lines": ["You have returned the artifact! Our village is safe once more!", "Here is your reward, and our eternal gratitude."],
+      "rewards_triggered": true,
+      "next_dialogue_id": null
+    },
+    "guard_goblin_threat": {
+      "speaker": "Guard Captain",
+      "lines": [
+        "The goblins have been growing bolder. They've even started raiding farms!",
+        "Their leader, the so-called Goblin King, must be dealt with.",
+        "Will you venture into the Goblin Cave and eliminate him?"
+      ],
+      "options": [
+        {"text": "Accept Task", "action": "accept_quest", "quest_id": "the_goblin_threat", "next_dialogue_id": "guard_encouraged"},
+        {"text": "Refuse", "action": "decline_quest", "next_dialogue_id": null}
+      ],
+      "requires_quest_status": {"quest_id": "the_missing_artifact", "status": "completed"}
+    },
+    "guard_encouraged": {
+      "speaker": "Guard Captain",
+      "lines": ["Good! The road to the Goblin Cave is east of the Forest Edge. Be careful."],
+      "next_dialogue_id": null
+    }
+  },
+
+  "events": {
+    "artifact_found_event": {
+      "type": "item_pickup",
+      "target_item_id": "ancient_artifact",
+      "description": "You found the Ancient Artifact!",
+      "effect": [
+        {"action": "update_objective", "quest_id": "the_missing_artifact", "objective_type": "find_item", "status": true},
+        {"action": "add_journal_entry", "entry_id": "artifact_found"}
+      ],
+      "trigger_message": "A faint glow emanates from the artifact in your hand."
+    },
+    "player_enters_ancient_shrine": {
+      "type": "room_entry",
+      "target_room_id": "ancient_shrine",
+      "description": "The air thickens with ancient magic.",
+      "effect": [
+        {"action": "display_message", "message": "You feel an old presence watching you."},
+        {"action": "set_quest_status", "quest_id": "shrine_mystery", "status": "available"}
+      ],
+      "requires_quest_status": {"quest_id": "the_missing_artifact", "status": "completed"}
+    },
+    "treasure_chest_opened": {
+      "type": "interaction",
+      "target_object_id": "treasure_chest",
+      "description": "You successfully opened the treasure chest!",
+      "effect": [
+        {"action": "add_item", "item_id": "golden_coins_100"},
+        {"action": "add_item", "item_id": "rare_gemstone"},
+        {"action": "update_objective", "quest_id": "the_goblin_threat", "objective_type": "discover_treasure", "status": true}
+      ],
+      "trigger_message": "The chest opens with a creak, revealing its contents."
+    }
+  },
+
+  "lore": {
+    "ancient_shrine_inscription": "Here lies the wisdom of the ancients, etched into stone for those worthy enough to seek it.",
+    "goblin_history_scroll": "A tattered scroll detailing the short, violent history of the forest goblins. They revere a 'Blood-Tooth Shaman'."
+  },
+
+  "journal_entries": {
+    "artifact_found": "Found the Ancient Artifact. I should return it to the Elder.",
+    "goblin_king_defeated": "The Goblin King has fallen. The village should be safer now."
+  }
+}

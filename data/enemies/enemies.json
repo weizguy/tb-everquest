@@ -1,0 +1,69 @@
+{
+  "forest_goblin_1": {
+    "name": "Forest Goblin",
+    "description": "A small, mischievous creature with green skin and sharp teeth. They often lurk in wooded areas.",
+    "type": "Goblin",
+    "health": 20,
+    "attack_power": 5,
+    "defense": 2,
+    "initiative_bonus": 1,
+    "loot_xp": 10,
+    "loot_items": ["healing_potion_1", "small_rock"]
+  },
+  "forest_goblin_2": {
+    "name": "Forest Goblin",
+    "description": "Another forest goblin, this one appears slightly more aggressive.",
+    "type": "Goblin",
+    "health": 22,
+    "attack_power": 6,
+    "defense": 2,
+    "initiative_bonus": 1,
+    "loot_xp": 12,
+    "loot_items": ["small_rock"]
+  },
+  "cave_goblin_guard": {
+    "name": "Cave Goblin Guard",
+    "description": "A slightly larger goblin, equipped with crude leather armor and a rusty shield. It guards the cave entrance.",
+    "type": "Goblin",
+    "health": 30,
+    "attack_power": 8,
+    "defense": 4,
+    "initiative_bonus": 2,
+    "loot_xp": 15,
+    "loot_items": ["rusty_dagger", "wooden_shield"]
+  },
+  "goblin_king": {
+    "name": "Goblin King",
+    "description": "A hulking, scarred goblin with a fierce demeanor, adorned with stolen trinkets and wielding a large, jagged sword. He is the leader of the goblin cave.",
+    "type": "Goblin",
+    "health": 75,
+    "attack_power": 15,
+    "defense": 8,
+    "initiative_bonus": 3,
+    "loot_xp": 50,
+    "loot_items": ["orcish_axe", "goblin_leader_amulet", "golden_idol"]
+  },
+  "dire_wolf": {
+    "name": "Dire Wolf",
+    "description": "A massive, fearsome wolf with glowing red eyes. Its teeth are like daggers.",
+    "type": "Enemy",
+    "health": 40,
+    "attack_power": 10,
+    "defense": 3,
+    "initiative_bonus": 2,
+    "loot_xp": 20,
+    "loot_items": ["wolf_pelt"]
+  },
+  "forest_spider_1": {
+    "name": "Forest Spider",
+    "description": "A large, hairy spider with venomous fangs. It waits patiently in its web.",
+    "type": "Enemy",
+    "health": 25,
+    "attack_power": 7,
+    "defense": 1,
+    "initiative_bonus": 2,
+    "loot_xp": 12,
+    "loot_items": ["spider_silk"],
+    "special_abilities": ["poison_attack"]
+  }
+}

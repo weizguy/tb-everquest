@@ -1,0 +1,96 @@
+{
+  "rusty_dagger": {
+    "item_id": 1,
+    "name": "Rusty Dagger",
+    "description": "A well-worn dagger, its blade tarnished with rust. It's better than nothing.",
+    "value": 5,
+    "type": "Weapon",
+    "damage": 8,
+    "weapon_type": "melee"
+  },
+  "wooden_shield": {
+    "item_id": 2,
+    "name": "Wooden Shield",
+    "description": "A simple shield made of reinforced wood. Offers basic protection.",
+    "value": 10,
+    "type": "Armor",
+    "defense": 5,
+    "armor_slot": "off_hand"
+  },
+  "leather_helmet": {
+    "item_id": 3,
+    "name": "Leather Helmet",
+    "description": "A basic leather helmet, providing minor defense for the head.",
+    "value": 8,
+    "type": "Armor",
+    "defense": 3,
+    "armor_slot": "head"
+  },
+  "healing_potion_1": {
+    "item_id": 4,
+    "name": "Small Healing Potion",
+    "description": "A small vial filled with a glowing red liquid. Restores a small amount of health.",
+    "value": 15,
+    "type": "Potion",
+    "effect_type": "heal",
+    "effect_strength": 20
+  },
+  "strength_potion_1": {
+    "item_id": 5,
+    "name": "Minor Strength Potion",
+    "description": "A bubbling yellow potion that temporarily boosts your physical strength.",
+    "value": 25,
+    "type": "Potion",
+    "effect_type": "strength_boost",
+    "effect_strength": 5
+  },
+  "old_key": {
+    "item_id": 6,
+    "name": "Old Key",
+    "description": "A rusty, ornate key. It might unlock something important.",
+    "value": 2,
+    "type": "Item"
+  },
+  "golden_idol": {
+    "item_id": 7,
+    "name": "Golden Idol",
+    "description": "A small, heavy idol carved from pure gold. It's incredibly valuable.",
+    "value": 500,
+    "type": "Item"
+  },
+  "mana_crystal": {
+    "item_id": 8,
+    "name": "Mana Crystal",
+    "description": "A shimmering blue crystal that radiates magical energy. Replenishes mana.",
+    "value": 30,
+    "type": "Potion",
+    "effect_type": "mana_restore",
+    "effect_strength": 30
+  },
+  "orcish_axe": {
+    "item_id": 9,
+    "name": "Orcish Battle Axe",
+    "description": "A heavy, brutish axe favored by orcish warriors. Its edge is crude but sharp.",
+    "value": 75,
+    "type": "Weapon",
+    "damage": 25,
+    "weapon_type": "melee"
+  },
+  "enchanted_ring_of_protection": {
+    "item_id": 10,
+    "name": "Enchanted Ring of Protection",
+    "description": "A silver ring glowing with a faint blue aura, offering magical protection.",
+    "value": 150,
+    "type": "Armor",
+    "defense": 10,
+    "armor_slot": "ring",
+    "magic_defense_bonus": 5
+  },
+  "small_rock": {
+    "item_id": 11,
+    "name": "Small Rock",
+    "description": "A small rock, useful? maybe...",
+    "value": 1,
+    "type": "Item"
+  }
+}

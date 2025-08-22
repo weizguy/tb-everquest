@@ -1,0 +1,71 @@
+{
+  "starting_cabin": {
+    "name": "Old Cabin",
+    "description": "A dusty, abandoned cabin. A flickering lantern hangs from the ceiling, casting long shadows. There's a crude wooden table and a rusted fireplace. A narrow path leads out to the north.",
+    "is_starting_room": true,
+    "exits": {
+      "north": "forest_edge"
+    },
+    "items": ["old_key", "rusty_dagger", "healing_potion_1"],
+    "enemies": []
+  },
+  "forest_edge": {
+    "name": "Forest Edge",
+    "description": "You stand at the edge of a dense, ancient forest. The trees loom tall, their branches forming a canopy overhead. Sunlight barely penetrates the thick foliage. You can go back south to the cabin, or venture deeper east into the forest.",
+    "exits": {
+      "south": "starting_cabin",
+      "east": "deep_forest_path"
+    },
+    "items": ["small_rock"],
+    "enemies": ["forest_goblin_1"]
+  },
+  "deep_forest_path": {
+    "name": "Deep Forest Path",
+    "description": "The path here is overgrown and winding. The air is damp and still, filled with the scent of pine and damp earth. You hear distant hooting owls and rustling in the undergrowth. There's a faint light to the north, and the forest edge is to the west.",
+    "exits": {
+      "west": "forest_edge",
+      "north": "ancient_shrine"
+    },
+    "items": ["mossy_stone"],
+    "enemies": ["forest_goblin_2", "forest_goblin_3"]
+  },
+  "ancient_shrine": {
+    "name": "Ancient Shrine",
+    "description": "A clearing reveals an ancient, moss-covered shrine. Its stone carvings are worn by time, depicting forgotten deities. A strange energy emanates from it. The deep forest path lies to the south.",
+    "exits": {
+      "south": "deep_forest_path"
+    },
+    "items": ["old_amulet"],
+    "enemies": [],
+    "special_events": ["trigger_shrine_puzzle"]
+  },
+  "goblin_cave": {
+    "name": "Goblin Cave Entrance",
+    "description": "A dark, ominous cave mouth yawns before you. A foul stench wafts out. You can hear faint grunting from within. The forest path is to the west.",
+    "exits": {
+      "west": "forest_path",
+      "enter": "goblin_cave_main"
+    },
+    "items": [],
+    "enemies": ["cave_goblin_guard"]
+  },
+  "goblin_cave_main": {
+    "name": "Main Goblin Cave",
+    "description": "The cave opens into a larger chamber, filled with crude goblin dwellings and the remains of old fires. Skeletons lie scattered about. You can hear more goblins deeper in. The exit is to the south.",
+    "exits": {
+      "south": "goblin_cave_entrance",
+      "east": "goblin_leader_chamber"
+    },
+    "items": ["torch", "rusty_sword"],
+    "enemies": ["cave_goblin_warrior_1", "cave_goblin_warrior_2", "cave_goblin_archer_1"]
+  },
+  "goblin_leader_chamber": {
+    "name": "Goblin Leader's Chamber",
+    "description": "This chamber is slightly larger and decorated with crude banners. A hulking goblin, larger than the others, sits on a makeshift throne. You can feel its gaze on you. The main cave is to the west.",
+    "exits": {
+      "west": "goblin_cave_main"
+    },
+    "items": ["goblin_leader_amulet", "treasure_chest"],
+    "enemies": ["goblin_king"]
+  }
+}
